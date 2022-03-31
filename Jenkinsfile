@@ -12,6 +12,7 @@ pipeline {
         
          stage("build") {
             steps {
+                sh "chmod +x -R ${env.WORKSPACE}"
                 sh './run.sh'
                 echo 'building the app'
             }
