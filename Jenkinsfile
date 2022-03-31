@@ -7,7 +7,7 @@ pipeline {
 
         stage("init") {
             steps {
-                script (
+                script {
                         gv = load "script.groovy"
                     }
                 echo 'building the app'
@@ -16,7 +16,7 @@ pipeline {
         
          stage("build") {
             steps {
-                    script (
+                script {
                         gv.runProc()
                     }
                 echo 'building the app'
