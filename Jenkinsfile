@@ -1,10 +1,24 @@
+def gv
+
 pipeline {
     agent any
     
     stages {
 
-        stage("build") {
+        stage("init") {
             steps {
+                script {
+                    gv = load ".script.groovy"
+                }
+                echo 'building the app'
+            }
+        }
+        
+         stage("build") {
+            steps {
+                script {
+                    gv.runProc()
+                }
                 echo 'building the app'
             }
         }
