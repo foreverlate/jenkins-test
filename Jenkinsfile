@@ -16,9 +16,7 @@ pipeline {
         
          stage("build") {
             steps {
-                script {
-                        gv.runProc()
-                    }
+            
                 echo 'building the app'
             }
         }
