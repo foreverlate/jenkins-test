@@ -1,3 +1,5 @@
+def gv
+
 pipeline {
     agent any
     
@@ -5,15 +7,18 @@ pipeline {
 
         stage("init") {
             steps {
-  
+                script (
+                        gv = load "script.groovy"
+                    }
                 echo 'building the app'
             }
         }
         
          stage("build") {
             steps {
-                sh "chmod +x -R ${env.WORKSPACE}"
-                sh './run.sh'
+                    script (
+                        gv.runProc()
+                    }
                 echo 'building the app'
             }
         }
