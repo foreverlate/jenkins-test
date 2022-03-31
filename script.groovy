@@ -1,4 +1,4 @@
-def runProc(){
+def buildApp(){
  sh '''
  #!/bin/bash
 
